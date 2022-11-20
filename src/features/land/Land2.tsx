@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import * as three from "three";
 
 export const Land2 = () => {
-  const model = useGLTF("./models/deadForest.glb");
+  const model = useGLTF("./models/land.glb");
   const { animations, scene } = model;
 
   console.log(model);

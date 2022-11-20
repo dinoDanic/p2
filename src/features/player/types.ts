@@ -1,4 +1,4 @@
-export type PlayerAnimationTypes = "jump" | "walk" | "run" | "idle";
+export type PlayerAnimationTypes = "jump" | "walk" | "run" | "idle" | "jumprun"
 
 export interface DirectionProps {
   forward: boolean;

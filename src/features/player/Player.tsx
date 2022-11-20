@@ -75,7 +75,7 @@ export const Player = () => {
       walkDirection.normalize();
       walkDirection.applyAxisAngle(rotateAngle, newDirectionOffSet);
 
-      const velocity = shift ? 7 : 1.7;
+      const velocity = shift ? 7.2 : 1.7;
 
       const moveX = walkDirection.x * velocity * delta;
       const moveZ = walkDirection.z * velocity * delta;
@@ -90,8 +90,8 @@ export const Player = () => {
     pointLight.current.intensity = lightIntensity({
       currentIntensity,
       delta,
-      min: 1,
-      max: 1.8,
+      min: 2,
+      max: 3,
     });
   });
 
@@ -99,13 +99,17 @@ export const Player = () => {
     let action: PlayerAnimationTypes = "idle";
 
     if (cameraType === "map") return;
+
     if (forward || backward || left || right) {
       action = "walk";
-      if (shift) {
-        action = "run";
-      }
       if (jump) {
         action = "jump";
+      }
+      if (shift) {
+        action = "run";
+        if (jump) {
+          action = "jumprun";
+        }
       }
     } else if (jump) {
       action = "jump";
@@ -137,10 +141,10 @@ export const Player = () => {
         <primitive object={scene}>
           <pointLight
             ref={pointLight}
-            intensity={1.8}
-            distance={15}
+            intensity={0.3}
+            distance={13}
             color={"orange"}
-            position={[0.5, 2.5, -0.9]}
+            position={[-0.2, 2.5, -1]}
             castShadow
           />
         </primitive>

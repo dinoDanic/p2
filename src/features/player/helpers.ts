@@ -47,11 +47,11 @@ export const lightIntensity = ({
 
   if (chance < 0.5) {
     if (currentIntensity > max) return currentIntensity;
-    newIntensity += 2 * delta;
+    newIntensity += 10 * delta;
   }
-  if (chance > 0.5 && chance < 1) {
+  if (chance > 0.5 && chance < 2) {
     if (currentIntensity < min) return currentIntensity;
-    newIntensity -= 2 * delta;
+    newIntensity -= 20 * delta;
   }
   return newIntensity;
 };
