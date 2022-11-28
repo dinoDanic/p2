@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "yarn open-browser && next dev",
+    "open-browser": "open http://localhost:3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,6 +15,7 @@
     "@react-spring/three": "^9.5.5",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.1",
+    "@react-three/rapier": "^0.11.0",
     "@reduxjs/toolkit": "^1.9.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
